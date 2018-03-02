@@ -1,11 +1,18 @@
 package tools.schedule;
 
+import java.util.concurrent.BlockingQueue;
+
 /**
  * Hello world!
  *
  */
 public class BaseScheduler{
-    public static void main( String[] args ) throws Exception{
-       
+    private static BlockingQueue<String> requestQueue;
+    static{
+        try {
+            requestQueue.put("");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
